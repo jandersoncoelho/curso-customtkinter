@@ -27,7 +27,7 @@ def aplicar_tema():
 def configurar_janela():
     """Cria e configura a janela principal da interface."""
     janela = ctk.CTk()
-    janela.title("Entry - Aula12")
+    janela.title("Button - Aula12")
     janela.iconbitmap("joia_pro_icon.ico")
     janela.resizable(False, False)
     return janela
