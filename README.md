@@ -1,7 +1,7 @@
 # Curso CustomTkinter
 
-Este repositório reúne os arquivos gerados durante as aulas da playlist do canal de YouTube @setprogramacao.
-
+Este repositório reúne os arquivos gerados durante as aulas da playlist do canal de YouTube
+[@setprogramacao](https://www.youtube.com/@setprogramacao).
 ## Sobre os arquivos
 
 Os arquivos deste projeto são resultantes das aulas da playlist e foram organizados por aulas, com exemplos práticos de uso do CustomTkinter.
