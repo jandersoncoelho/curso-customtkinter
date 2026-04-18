@@ -1,4 +1,13 @@
-"""Exemplo de uso do widget label dinâmico aula 10."""
+"""
+    Aula 10 - Label dinâmico com CustomTkinter.
+
+    Neste exemplo, criamos uma interface com campo de entrada, botão de envio
+    e rótulo dinâmico. O conteúdo digitado pelo usuário é exibido em tempo real,
+    demonstrando a atualização visual de widgets com interação simples.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
 from pathlib import Path
 
@@ -69,11 +78,13 @@ def criar_caixa_de_entrada(janela):
 
     return caixa_de_entrada
 
+
 def criar_botao(janela, label_dinamico, caixa_de_entrada):
     button_enviar = ctk.CTkButton(
         janela,
         text="Enviar",
-        command=lambda: on_clicar_botao_enviar(label_dinamico, caixa_de_entrada),
+        command=lambda: on_clicar_botao_enviar(
+            label_dinamico, caixa_de_entrada),
         width=150,
         height=40,
         font=("Arial", 14, "bold"),
@@ -95,9 +106,11 @@ def usar_label_dinamico(janela):
     label_dinamico.pack(pady=10, padx=20, anchor="center")
     return label_dinamico
 
+
 def on_clicar_botao_enviar(label_dinamico, caixa_de_entrada):
     texto_entrada = caixa_de_entrada.get()
     label_dinamico.configure(text=f"Você digitou: {texto_entrada}")
+
 
 def main():
     """Ponto de entrada da aplicação."""

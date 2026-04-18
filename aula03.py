@@ -1,4 +1,15 @@
-# Como customizar tema  na sua aplicação - Aula03
+"""
+    Aula 03 - Personalização de tema no CustomTkinter.
+
+    Neste exemplo, mostramos como aplicar um tema visual personalizado e
+    definir o modo de aparência da aplicação. O código destaca uma estrutura
+    simples para padronizar a interface e melhorar a experiência visual do
+    usuário.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk

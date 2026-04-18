@@ -1,4 +1,15 @@
-# Introducao ao CustomTKinter
+"""
+    Aula 01 - Introdução ao CustomTkinter.
+
+    Neste exemplo, apresentamos os primeiros passos com CustomTkinter,
+    incluindo a criação de uma janela principal, um rótulo e um botão com
+    tema personalizado. A interface demonstra uma base simples e organizada
+    para iniciar aplicações gráficas em Python.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk

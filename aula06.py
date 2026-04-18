@@ -1,4 +1,14 @@
-# Aprenda a criar Tabs (Abas) no CustomTkinter - Aula06
+"""
+    Aula 06 - Tabs com CustomTkinter.
+
+    Neste exemplo, exploramos a criação de abas usando o widget CTkTabview.
+    A interface organiza conteúdos em seções distintas, facilitando a
+    navegação entre diferentes áreas da aplicação com um visual moderno.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 import customtkinter as ctk
 
@@ -38,8 +48,8 @@ def criar_tabs(janela):
     tabview = ctk.CTkTabview(janela, corner_radius=20,
                              border_width=2, border_color="#1e90ff",
                              fg_color="#061623", segmented_button_fg_color="#1e90ff",
-                             segmented_button_selected_color="#1e90ff", 
-                             segmented_button_unselected_color="#061623", 
+                             segmented_button_selected_color="#1e90ff",
+                             segmented_button_unselected_color="#061623",
                              segmented_button_selected_hover_color="#7e96af",
                              anchor="nw")
     tabview.pack(expand=True, fill="both", padx=20, pady=20)

@@ -1,4 +1,14 @@
-# Aprenda a criar uma caixa de texto de forma correta (Textbox) - Aula07
+"""
+    Aula 07 - Caixa de texto com CustomTkinter.
+
+    Neste exemplo, mostramos como utilizar o widget CTkTextbox para entrada e
+    exibição de textos longos. A interface aplica tema, barras de rolagem e
+    personalização visual para oferecer uma experiência de escrita mais rica.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 import customtkinter as ctk
 

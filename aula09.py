@@ -1,4 +1,13 @@
-"""Exemplo de uso do widget CTkOptionMenu com tema customizado."""
+"""
+    Aula 09 - OptionMenu com CustomTkinter.
+
+    Neste exemplo, demonstramos como utilizar o widget CTkOptionMenu para
+    permitir a seleção de opções em uma lista. A interface apresenta os meses
+    do ano e atualiza dinamicamente um rótulo com a escolha do usuário.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
 from pathlib import Path
 

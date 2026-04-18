@@ -1,24 +1,14 @@
 """
-app = ctk.CTk()
-app.geometry("400x300")
+    Aula 08 - Caixa de diálogo com CustomTkinter.
 
-def abrir_dialogo():
-# Criação da caixa de diálogo
-dialog = ctk.CTkInputDialog(title="Caixa de diálogo", text="Digite seu número de celular:")
+    Neste exemplo, exploramos o uso do widget CTkInputDialog para coletar
+    informações do usuário de forma simples e interativa. A interface exibe o
+    resultado digitado na própria janela, reforçando o uso prático de diálogos.
 
-# Captura e exibição do input
-resultado = dialog.get_input()
-if resultado:
-print(f"Número de celular buscado: {resultado}")
-Botão para disparar a função
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
-btn = ctk.CTkButton(app, text="Abrir caixa de diálogo", command=abrir_dialogo)
-btn.pack(pady=20)
-
-app.mainloop()
-    """
-
-# Aprenda a criar uma caixa de texto de forma correta (Textbox) - Aula07
 from pathlib import Path
 import customtkinter as ctk
 

@@ -1,5 +1,14 @@
-"""Aula 13 - Imagens com CustomTkinter.
-Neste exemplo, exploramos imagens. com CustomTkinter"""
+"""
+    Aula 13 - Imagens com CustomTkinter.
+
+    Neste exemplo, exploramos o uso de imagens com CustomTkinter para criar
+    uma interface visualmente atraente. O código inclui temas personalizados,
+    rótulos com imagens e um botão para alternar entre modos claro e escuro,
+    demonstrando como integrar elementos visuais de forma eficaz.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
 from pathlib import Path
 
@@ -10,8 +19,8 @@ ARQUIVO_TEMA = Path(__file__).with_name("tema_oceano.json")
 MODO_APARENCIA_ESCURO = "Dark"  # "light", "dark", "system"
 MODO_APARENCIA_CLARO = "Light"
 IMAGEM_TEMA = ctk.CTkImage(light_image=Image.open("images/lamp-on.png"),
-                            dark_image=Image.open("images/lamp-off.png"),
-                            size=(80, 80))
+                           dark_image=Image.open("images/lamp-off.png"),
+                           size=(80, 80))
 IMAGEM_BOTAO = ctk.CTkImage(light_image=Image.open("images/day-mode.png"),
                             dark_image=Image.open("images/dark-mode.png"),
                             size=(30, 30))
@@ -58,6 +67,7 @@ def criar_label(janela: ctk.CTk, texto: str):
         font=("Comic Sans MS", 18, "bold"),
     ).pack(pady=(20, 10), padx=20, anchor="center")
 
+
 def criar_imagem_tema(janela: ctk.CTk):
     """Cria um rótulo com imagem para a interface."""
     ctk.CTkLabel(
@@ -67,6 +77,7 @@ def criar_imagem_tema(janela: ctk.CTk):
         width=100,
         height=100,
     ).pack(pady=(10, 20), padx=20, anchor="center")
+
 
 def trocar_aparencia_tema():
     """Alterna entre os modos de aparência claro e escuro."""

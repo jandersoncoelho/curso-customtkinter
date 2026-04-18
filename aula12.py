@@ -1,4 +1,13 @@
-"""Exemplo de uso do widget CtkButtom com tema customizado."""
+"""
+    Aula 12 - Botões com CustomTkinter.
+
+    Neste exemplo, demonstramos a criação de um botão estilizado com imagem e
+    a implementação de uma função para alternar entre os modos claro e escuro.
+    A interface evidencia como unir personalização visual e interatividade.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
 from pathlib import Path
 
@@ -8,8 +17,8 @@ from PIL import Image
 ARQUIVO_TEMA = Path(__file__).with_name("tema_oceano.json")
 MODO_APARENCIA_ESCURO = "Dark"  # "light", "dark", "system"
 MODO_APARENCIA_CLARO = "Light"
-IMAGEM_BOTAO = ctk.CTkImage(light_image=Image.open("images/day-mode.png"), 
-                            dark_image=Image.open("images/dark-mode.png"), 
+IMAGEM_BOTAO = ctk.CTkImage(light_image=Image.open("images/day-mode.png"),
+                            dark_image=Image.open("images/dark-mode.png"),
                             size=(30, 30))
 
 

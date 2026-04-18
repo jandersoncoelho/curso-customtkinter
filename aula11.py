@@ -1,4 +1,13 @@
-"""Exemplo de uso do widget ctkEntry com tema customizado."""
+"""
+    Aula 11 - Entry com CustomTkinter.
+
+    Neste exemplo, exploramos o widget CTkEntry para receber dados do usuário
+    e exibir o texto informado em um rótulo dinâmico. A interface destaca uma
+    forma clara e elegante de capturar entradas em aplicações gráficas.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
 
 from pathlib import Path
 
@@ -109,7 +118,8 @@ def criar_botao(janela: ctk.CTk, label_dinamico: ctk.CTkLabel, caixa_de_entrada:
 
 def criar_widgets(janela):
     """Cria o rótulo e o Entry com tema customizado."""
-    criar_label(janela, "Digite algo na caixa de entrada abaixo e clique no botão.")
+    criar_label(
+        janela, "Digite algo na caixa de entrada abaixo e clique no botão.")
     caixa_de_entrada = criar_caixa_de_entrada(janela)
     label_dinamico = usar_label_dinamico(janela)
     criar_botao(janela,

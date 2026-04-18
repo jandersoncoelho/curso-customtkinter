@@ -1,4 +1,15 @@
-# Como criar frames posicionados em uma janela - Aula05
+"""
+    Aula 05 - Estruturando o layout e posicionamento da janela.
+
+    Neste exemplo, organizamos a base visual da aplicação com tema
+    personalizado e centralização da janela na tela. A estrutura prepara o
+    ambiente para posicionar widgets e frames de forma mais controlada e
+    responsiva.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk

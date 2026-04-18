@@ -1,3 +1,14 @@
+"""
+    Teste de posicionamento com anchor no Tkinter.
+
+    Neste exemplo, demonstramos como o parâmetro anchor influencia o
+    posicionamento de widgets usando o método place. O script mostra o
+    alinhamento de elementos em diferentes cantos da janela de forma simples.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 import tkinter as tk
 
 root = tk.Tk()

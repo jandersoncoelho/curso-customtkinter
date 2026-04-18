@@ -1,4 +1,15 @@
-# Como abrir uma nova janela na sua aplicação - Aula04
+"""
+    Aula 04 - Abrindo uma nova janela na aplicação.
+
+    Neste exemplo, demonstramos como criar uma janela secundária usando
+    CustomTkinter. O código mostra a configuração da janela principal, a
+    criação de um botão e a abertura de uma nova interface para interação
+    adicional dentro da aplicação.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk

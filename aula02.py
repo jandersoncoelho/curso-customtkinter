@@ -1,4 +1,15 @@
-# Configurando Janelas
+"""
+    Aula 02 - Configurando janelas com CustomTkinter.
+
+    Neste exemplo, exploramos a configuração da janela principal da aplicação,
+    definindo tamanho inicial, limites mínimos e máximos, redimensionamento e
+    ícone personalizado. A interface serve como base para construir layouts
+    mais completos de forma controlada.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk

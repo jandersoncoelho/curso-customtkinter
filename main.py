@@ -1,3 +1,15 @@
+"""
+    Arquivo principal - Projeto CustomTkinter.
+
+    Este script apresenta uma estrutura base para iniciar o projeto com
+    CustomTkinter, aplicando tema personalizado e exibindo uma interface
+    simples com rótulos e botão de fechamento. Ele pode ser usado como ponto
+    de partida para novas aulas ou para o menu principal da aplicação.
+
+    Autor: Janderson de Almeida
+    Data: 2024-06-01
+"""
+
 from pathlib import Path
 
 import customtkinter as ctk
