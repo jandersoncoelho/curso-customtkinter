@@ -10,35 +10,35 @@
     Data: 2024-06-01
 """
 
-from pathlib import Path
-
 import customtkinter as ctk
 
-ARQUIVO_TEMA = Path(__file__).with_name("tema_oceano.json")
-MODO_APARENCIA = "system"
+from ctk_base_form import CtkBaseForm
 
 
-def aplicar_tema():
-    ctk.set_default_color_theme(str(ARQUIVO_TEMA))
-    ctk.set_appearance_mode(MODO_APARENCIA)
+def main() -> None:
+    janela_principal = CtkBaseForm(
+        aparencia="System",
+        titulo="Minha Janela customtkinter - Aula 01",
+        largura=400,
+        altura=300,
+    )
 
-
-def main():
-    aplicar_tema()
-
-    janela = ctk.CTk()
-    janela.title("Minha Janela customtkinter - Aula 01")
-    janela.geometry("400x300")
-    janela.iconbitmap("joia_pro_icon.ico")
-
-    label = ctk.CTkLabel(janela, text="Ola, Mundo!", font=(
-        "Arial", 20), text_color_disabled="red")
+    label = ctk.CTkLabel(
+        janela_principal,
+        text="Ola, Mundo!",
+        font=("Arial", 20),
+        text_color_disabled="red",
+    )
     label.pack(pady=50)
 
-    button = ctk.CTkButton(janela, text="Clique aqui", bg_color="gray")
+    button = ctk.CTkButton(
+        janela_principal,
+        text="Clique aqui",
+        bg_color="gray",
+    )
     button.pack()
 
-    janela.mainloop()
+    janela_principal.mainloop()
 
 
 if __name__ == "__main__":
