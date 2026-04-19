@@ -10,30 +10,12 @@
     Data: 2024-06-01
 """
 
-from pathlib import Path
-
 import customtkinter as ctk
 
-ARQUIVO_TEMA = Path(__file__).with_name("tema_oceano.json")
-MODO_APARENCIA = "system"
-ICONE_JANELA = "joia_pro_icon.ico"
+from ctk_base_form import CtkBaseForm
 
 
-def aplicar_tema():
-    ctk.set_default_color_theme(str(ARQUIVO_TEMA))
-    ctk.set_appearance_mode(MODO_APARENCIA)
-
-
-def configurar_janela():
-    janela = ctk.CTk()
-    janela.title("Projeto CustomTkinter")
-    janela.geometry("700x420")
-    janela.minsize(width=500, height=320)
-    janela.iconbitmap(ICONE_JANELA)
-    return janela
-
-
-def montar_interface(janela):
+def montar_interface(janela: CtkBaseForm) -> None:
     ctk.CTkLabel(
         master=janela,
         text="Projeto padronizado com tema personalizado",
@@ -52,11 +34,16 @@ def montar_interface(janela):
     ).pack()
 
 
-def main():
-    aplicar_tema()
-    janela = configurar_janela()
-    montar_interface(janela)
-    janela.mainloop()
+def main() -> None:
+    janela_principal = CtkBaseForm(
+        aparencia="System",
+        titulo="Projeto CustomTkinter",
+        largura=700,
+        altura=420,
+    )
+    janela_principal.minsize(width=500, height=320)
+    montar_interface(janela_principal)
+    janela_principal.mainloop()
 
 
 if __name__ == "__main__":
