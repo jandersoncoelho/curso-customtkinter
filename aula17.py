@@ -17,15 +17,24 @@ class Aula17Form(CtkBaseForm):
         self.checkbox_var = ctk.BooleanVar(value=False)
         self.montar_interface()
 
-    def verificar_selecao_checkbox(self) -> None:
+    def ao_clicar_no_checkbox(self) -> None:
         """Verifica o estado do checkbox e atualiza o label de resultado."""
-        estado_checkbox = self.checkbox_var.get()
-        resultado_texto = "Checkbox selecionado!" if estado_checkbox else "Checkbox não selecionado."
-        print(resultado_texto)
+        checkbox_clicado = self.checkbox_var.get()
+        resultado_texto = "Você está no tema claro." if checkbox_clicado else "Você está no tema escuro."
+        self.label_resultado.configure(text=resultado_texto)
+        self.aplicar_tema("Light" if checkbox_clicado else "Dark")
 
-    def criar_label_de_resultado(self, estado: bool) -> None:
+    def criar_label_de_resultado(self) -> None:
         """Cria um label para exibir o resultado da seleção do checkbox."""
-        pass
+        self.label_resultado = ctk.CTkLabel(
+            self,
+            text="",
+            width=400,
+            height=40,
+            corner_radius=10,
+            font=("Arial", 16, "bold"),
+        )
+        self.label_resultado.pack(pady=10, padx=20, anchor="center")
 
     def criar_exemplo_checkbox(self) -> None:
         """Cria um checkbox na janela."""
@@ -35,7 +44,7 @@ class Aula17Form(CtkBaseForm):
             variable=self.checkbox_var,
             onvalue=True,
             offvalue=False,
-            command=self.verificar_selecao_checkbox,
+            command=self.ao_clicar_no_checkbox,
         )
         self.checkbox.pack(pady=20)
 
@@ -43,8 +52,7 @@ class Aula17Form(CtkBaseForm):
         self.criar_label_de_titulo_da_janela(
             "Criando um checkbox com CustomTkinter")
         self.criar_exemplo_checkbox()
-        self.criar_label_de_resultado(False)
-        self.verificar_selecao_checkbox()
+        self.criar_label_de_resultado()
 
 
 if __name__ == "__main__":
