@@ -109,6 +109,12 @@ Neste exemplo, estudamos o widget `CTkSwitch` para alternar estados binários. A
 
 ---
 
-**Aula 17 - (Em desenvolvimento)**
-Arquivo template criado como ponto de partida para a próxima aula, seguindo os padrões do projeto com herança de `CtkBaseForm`.
+**Aula 17 - CheckBox com CustomTkinter**
+Neste exemplo, exploramos o widget `CTkCheckBox` para alternar estados de seleção e atualizar a interface dinamicamente. A aula demonstra como vincular o estado do checkbox a uma `BooleanVar`, exibir feedback em um rótulo e alternar o tema da aplicação entre claro e escuro.
+*Autor: Janderson de Almeida*
+
+---
+
+**Aula 18 - RadioButton com CustomTkinter**
+Neste exemplo, estudamos o widget `CTkRadioButton` para seleção exclusiva de opções. A interface organiza um grupo de RadioButtons para escolher o sexo como masculino ou feminino e exibir a opção selecionada em um label.
 *Autor: Janderson de Almeida*
