@@ -14,7 +14,8 @@ class Aula16Form(CtkBaseForm):
             altura=500,
         )
         self.resizable(width=False, height=False)
-
+        self.montar_interface()
+        
     def alterar_tema_do_aplicativo(self) -> None:
         """Altera o tema do aplicativo entre claro e escuro."""
         modo_atual = ctk.get_appearance_mode()

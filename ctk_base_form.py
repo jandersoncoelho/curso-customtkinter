@@ -38,7 +38,6 @@ class CtkBaseForm(ctk.CTk):
         self.aplicar_tema(aparencia)
         self.configurar_janela(titulo)
         self.centralizar_janela()
-        self.montar_interface()
 
     def aplicar_tema(self, aparencia: str = MODO_APARENCIA_PADRAO) -> None:
         """Aplica o tema visual e o modo de aparência da interface."""
@@ -88,6 +87,15 @@ class CtkBaseForm(ctk.CTk):
         posicao_x = (largura_tela - self.largura) // 2
         posicao_y = (altura_tela - self.altura) // 2
         return posicao_x, posicao_y
+    
+    def criar_label_de_titulo_da_janela(self, texto: str) -> None:
+        """Cria um label do título na janela."""
+        titulo = ctk.CTkLabel(
+            self,
+            text=texto,
+            font=("Arial", 24, "bold"),
+        )
+        titulo.pack(pady=20)
 
 
 if __name__ == "__main__":

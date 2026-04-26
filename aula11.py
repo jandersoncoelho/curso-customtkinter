@@ -18,6 +18,7 @@ class Aula11Form(CtkBaseForm):
             altura=300,
         )
         self.resizable(width=False, height=False)
+        self.montar_interface()
 
     def montar_interface(self) -> None:
         """Sobrescreve a base para concentrar toda a estrutura de widgets."""

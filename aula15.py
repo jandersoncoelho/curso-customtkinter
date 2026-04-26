@@ -14,6 +14,7 @@ class Aula15Form(CtkBaseForm):
             altura=500,
         )
         self.resizable(width=False, height=False)
+        self.montar_interface()
 
     def opcao_selecionada(self, valor: str) -> None:
         """Exibe o valor selecionado no console."""
@@ -27,7 +28,7 @@ class Aula15Form(CtkBaseForm):
             text_color="#F0F0F0",
             font=("Arial", 20, "bold"),
         ).pack(pady=(20, 10))
-        
+
         segment_button = ctk.CTkSegmentedButton(
             self,
             values=["Opção 1", "Opção 2", "Opção 3"],
@@ -36,9 +37,9 @@ class Aula15Form(CtkBaseForm):
             fg_color="#555555",
             selected_color="#007ACC",
             text_color="#F0F0F0",
-        
+
         )
-        segment_button.pack(pady=20)    
+        segment_button.pack(pady=20)
 
 
 if __name__ == "__main__":

@@ -24,6 +24,7 @@ class Aula14Form(CtkBaseForm):
             altura=220,
         )
         self.resizable(width=False, height=False)
+        self.montar_interface()
 
     def montar_interface(self) -> None:
         """Concentra a criação e organização dos widgets da janela."""
