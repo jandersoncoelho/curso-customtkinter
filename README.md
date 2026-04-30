@@ -118,3 +118,9 @@ Neste exemplo, exploramos o widget `CTkCheckBox` para alternar estados de seleç
 **Aula 18 - RadioButton com CustomTkinter**
 Neste exemplo, estudamos o widget `CTkRadioButton` para seleção exclusiva de opções. A interface organiza um grupo de RadioButtons para escolher o sexo como masculino ou feminino e exibir a opção selecionada em um label.
 *Autor: Janderson de Almeida*
+
+---
+
+**Aula 19 - ProgressBar com status dinâmico**
+Neste exemplo, demonstramos o uso do widget `CTkProgressBar` com tema personalizado para representar progresso visual de forma interativa. A interface inclui um botão de ação que incrementa a barra gradualmente, atualiza o percentual exibido em tempo real e mostra o status de cliques, consolidando o uso de feedback visual e atualização dinâmica de widgets.
+*Autor: Janderson de Almeida*
