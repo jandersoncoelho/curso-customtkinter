@@ -124,3 +124,12 @@ Neste exemplo, estudamos o widget `CTkRadioButton` para seleção exclusiva de o
 **Aula 19 - ProgressBar com status dinâmico**
 Neste exemplo, demonstramos o uso do widget `CTkProgressBar` com tema personalizado para representar progresso visual de forma interativa. A interface inclui um botão de ação que incrementa a barra gradualmente, atualiza o percentual exibido em tempo real e mostra o status de cliques, consolidando o uso de feedback visual e atualização dinâmica de widgets.
 *Autor: Janderson de Almeida*
+
+---
+
+**Aula 20 - Aprendendo a usar o método place()**
+Neste exemplo, exploramos o método `place()` para posicionar widgets de forma absoluta e relativa na janela. A interface demonstra o uso de coordenadas fixas (`x`, `y`) e proporcionais (`relx`, `rely`) para posicionar botões, oferecendo controle preciso sobre o layout da aplicação.
+*Autor: Janderson de Almeida*
+
+---
+
