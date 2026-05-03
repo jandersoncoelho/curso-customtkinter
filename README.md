@@ -155,3 +155,10 @@ Neste exemplo, exploramos o método `pack()` para organizar os widgets de forma 
 *Autor: Janderson de Almeida*
 
 ---
+
+#### **[Aula 22 - Método grid()](aula22.py)**
+
+Neste exemplo, exploramos o método `grid()` para organizar widgets em linhas e colunas dentro da janela. A interface apresenta um botão e dois checkboxes distribuídos em uma grade, demonstrando o uso de configuração de colunas, espaçamentos com `padx` e `pady`, além do posicionamento com `row`, `column` e `columnspan` para criar um layout mais estruturado.
+*Autor: Janderson de Almeida*
+
+---
