@@ -14,24 +14,28 @@ https://www.youtube.com/playlist?list=PL6KTZQDPGs5gZYtK9YblxA-Te9wQM8mdb
 ## Descrição das Aulas
 
 #### **[Aula 01 - Introdução ao CustomTkinter](aula01.py)**
+
 Neste exemplo, apresentamos os primeiros passos com CustomTkinter, incluindo a criação de uma janela principal, um rótulo e um botão com tema personalizado. A interface demonstra uma base simples e organizada para iniciar aplicações gráficas em Python.
 *Autor: Janderson de Almeida*
 
 ---
 
 #### **[Aula 02 - Configurando janelas com CustomTkinter](aula02.py)**
+
 Neste exemplo, exploramos a configuração da janela principal da aplicação, definindo tamanho inicial, limites mínimos e máximos, redimensionamento e ícone personalizado. A interface serve como base para construir layouts mais completos de forma controlada.
 *Autor: Janderson de Almeida*
 
 ---
 
 #### **[Aula 03 - Personalização de tema no CustomTkinter](aula03.py)**
+
 Neste exemplo, mostramos como aplicar um tema visual personalizado e definir o modo de aparência da aplicação. O código destaca uma estrutura simples para padronizar a interface e melhorar a experiência visual do usuário.
 *Autor: Janderson de Almeida*
 
 ---
 
 #### **[Aula 04 - Abrindo uma nova janela na aplicação](aula04.py)**
+
 Neste exemplo, demonstramos como criar uma janela secundária usando CustomTkinter. O código mostra a configuração da janela principal, a criação de um botão e a abertura de uma nova interface com `CTkToplevel` para interação adicional dentro da aplicação.
 *Autor: Janderson de Almeida*
 
