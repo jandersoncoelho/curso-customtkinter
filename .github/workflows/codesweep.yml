@@ -1,0 +1,40 @@
+name: "CodeQL SAST"
+
+on:
+	push:
+		branches: [ main ]
+		paths-ignore:
+			- '.venv/**'
+	pull_request:
+		paths-ignore:
+			- '.venv/**'
+	schedule:
+		- cron: '0 3 * * 0' # semanal aos domingos às 03:00 UTC
+
+jobs:
+	analyze:
+		name: CodeQL SAST Analysis
+		runs-on: ubuntu-latest
+
+		steps:
+			- name: Checkout repository
+				uses: actions/checkout@v4
+
+			- name: Initialize CodeQL
+				uses: github/codeql-action/init@v2
+				with:
+					languages: python
+
+			- name: Set up Python
+				uses: actions/setup-python@v4
+				with:
+					python-version: '3.x'
+
+			- name: Install dependencies (if any)
+				run: |
+					python -m pip install --upgrade pip
+					if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+			- name: Perform CodeQL analysis
+				uses: github/codeql-action/analyze@v2
+
