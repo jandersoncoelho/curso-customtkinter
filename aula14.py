@@ -4,6 +4,7 @@ import importlib.util
 from importlib import import_module
 from pathlib import Path
 from threading import Thread
+import math
 
 import customtkinter as ctk
 
@@ -119,29 +120,57 @@ class Aula14Frame(ctk.CTkFrame):
                 aplicar_tema()
         except Exception:
             pass
+        self.volume_percent = 0
         self.rotulo_status_reproducao = ctk.CTkLabel(self, text="Alterar volume: 0%", font=("Arial", 16))
         self.rotulo_status_reproducao.pack(pady=20)
-        controle_volume = ctk.CTkSlider(self, from_=0, to=100, command=self.atualizar_status_volume)
-        controle_volume.set(0)
-        controle_volume.pack(pady=10)
+        self.controle_volume = ctk.CTkSlider(self, from_=0, to=100, command=self.atualizar_status_volume)
+        self.controle_volume.set(0)
+        self.controle_volume.pack(pady=10)
         ctk.CTkButton(self, text="Play", command=self.reproduzir_audio).pack(pady=10)
 
     def atualizar_status_volume(self, valor: float) -> None:
         percentual_volume = int(float(valor))
+        self.volume_percent = percentual_volume
         self.atualizar_rotulo_status(f"Alterar volume: {percentual_volume}%")
 
     def atualizar_rotulo_status(self, mensagem: str) -> None:
         if self.rotulo_status_reproducao is not None:
             self.rotulo_status_reproducao.configure(text=mensagem)
 
+    def dependencias_audio_estao_disponiveis(self) -> bool:
+        import importlib.util
+        return importlib.util.find_spec("pydub") is not None and importlib.util.find_spec("simpleaudio") is not None
+
     def reproduzir_audio(self) -> None:
         try:
             if not self.dependencias_audio_estao_disponiveis():
-                self.atualizar_rotulo_status("Instale pydub para reproduzir o áudio.")
+                self.atualizar_rotulo_status("Instale pydub e simpleaudio para reproduzir áudio.")
                 return
         except Exception:
             pass
+        if not CAMINHO_ARQUIVO_AUDIO.exists():
+            self.atualizar_rotulo_status("Arquivo de áudio não encontrado.")
+            return
         self.atualizar_rotulo_status("Reproduzindo áudio...")
+        Thread(target=self._executar_reproducao_audio, daemon=True).start()
+
+    def _executar_reproducao_audio(self) -> None:
+        try:
+            from importlib import import_module
+            modulo_audio = import_module("pydub")
+            modulo_reproducao = import_module("pydub.playback")
+            faixa_de_audio = modulo_audio.AudioSegment.from_file(str(CAMINHO_ARQUIVO_AUDIO))
+            pct = max(0.0, min(100.0, float(self.volume_percent)))
+            if pct <= 0:
+                gain_db = -120.0
+            else:
+                gain_db = 20 * math.log10(pct / 100.0)
+            faixa_alterada = faixa_de_audio.apply_gain(gain_db)
+            modulo_reproducao.play(faixa_alterada)
+            self.after(0, lambda: self.atualizar_rotulo_status("Reprodução finalizada."))
+        except Exception as erro:
+            mensagem_erro = str(erro)
+            self.after(0, lambda: self.atualizar_rotulo_status(f"Erro ao tocar áudio: {mensagem_erro}"))
 
 if __name__ == "__main__":
     main()

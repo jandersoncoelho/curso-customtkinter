@@ -81,12 +81,8 @@ class MenuPrincipal(CtkBaseForm):
 
     def _descobrir_scripts(self) -> Iterable[Path]:
         raiz = Path(__file__).parent
-        arquivos: List[Path] = []
-        for p in sorted(raiz.glob("*.py")):
-            if p.name in EXCLUIR:
-                continue
-            arquivos.append(p)
-        return arquivos
+        arquivos: List[Path] = [f for f in raiz.glob("*.py") if f.name not in EXCLUIR]
+        return sorted(arquivos)
 
     def _clear_content(self) -> None:
         for child in self.content.winfo_children():
