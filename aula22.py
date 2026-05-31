@@ -60,6 +60,18 @@ class Aula22Form(CtkBaseForm):
         print("Botão clicado")
 
 
+class Aula22Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.valor_do_primeiro_checkbox_atual = ctk.StringVar(value="clicado")
+        self.valor_do_segundo_checkbox_atual = ctk.StringVar(value="clicado")
+        self.botao_demonstracao = ctk.CTkButton(self, text="Clique no Botão", command=lambda: print("Botão clicado"))
+        self.primeiro_checkbox = ctk.CTkCheckBox(self, text="Clique no checkbox", variable=self.valor_do_primeiro_checkbox_atual, onvalue="selecionado", offvalue="não selecionado", command=lambda: print(f"Primeiro Checkbox: {self.primeiro_checkbox.get()}"))
+        self.segundo_checkbox = ctk.CTkCheckBox(self, text="Segundo checkbox", variable=self.valor_do_segundo_checkbox_atual, onvalue="selecionado", offvalue="não selecionado", command=lambda: print(f"Segundo Checkbox: {self.segundo_checkbox.get()}"))
+        self.botao_demonstracao.grid(row=0, column=0, pady=20, padx=20, stick="ew", columnspan=2)
+        self.primeiro_checkbox.grid(row=1, column=0, pady=(0, 20), padx=20, stick="w")
+        self.segundo_checkbox.grid(row=1, column=1, pady=(0, 20), padx=20, stick="w")
+
 if __name__ == "__main__":
     app = Aula22Form()
     app.mainloop()

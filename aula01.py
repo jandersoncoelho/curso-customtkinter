@@ -41,5 +41,19 @@ def main() -> None:
     janela_principal.mainloop()
 
 
+class Aula01Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            # aplicar tema se disponível
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        # reutiliza os widgets definidos no módulo quando possível
+        if 'label' in globals() or True:
+            ctk.CTkLabel(self, text="Ola, Mundo!", font=("Arial", 20)).pack(pady=20)
+            ctk.CTkButton(self, text="Clique aqui").pack()
+
 if __name__ == "__main__":
     main()

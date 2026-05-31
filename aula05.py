@@ -23,5 +23,16 @@ def main() -> None:
     janela_principal.mainloop()
 
 
+class Aula05Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'CtkBaseForm' in globals():
+                # nothing to reuse directly; show basic info
+                pass
+        except Exception:
+            pass
+        ctk.CTkLabel(self, text="Aula 05 - Layout e posicionamento (embutido)", font=(None, 16)).pack(padx=20,pady=20)
+
 if __name__ == "__main__":
     main()

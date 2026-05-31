@@ -70,5 +70,20 @@ def main():
     janela.mainloop()
 
 
+class Aula08Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        # cria botão que abre diálogo reutilizando abrir_dialogo
+        try:
+            btn = ctk.CTkButton(self, text="Abrir caixa de diálogo", command=lambda: abrir_dialogo(self, btn))
+            btn.pack(pady=20)
+        except Exception:
+            ctk.CTkButton(self, text="Abrir caixa de diálogo", command=lambda: abrir_dialogo(self)).pack(pady=20)
+
 if __name__ == "__main__":
     main()

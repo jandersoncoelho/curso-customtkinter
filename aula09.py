@@ -123,5 +123,21 @@ def main():
     janela.mainloop()
 
 
+class Aula09Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        if 'criar_option_menu' in globals():
+            try:
+                criar_option_menu(self)
+                return
+            except Exception:
+                pass
+        ctk.CTkLabel(self, text="Aula 09 - OptionMenu (embutido)").pack(padx=20,pady=20)
+
 if __name__ == "__main__":
     main()

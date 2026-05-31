@@ -42,5 +42,15 @@ def main():
     janela.mainloop()
 
 
+class Aula02Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        ctk.CTkLabel(self, text="Aula 02 - Janela configurada (embutida)", font=(None, 16)).pack(padx=20, pady=20)
+
 if __name__ == "__main__":
     main()

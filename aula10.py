@@ -124,5 +124,18 @@ def main():
     janela.mainloop()
 
 
+class Aula10Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        criar_label_estatico(self)
+        caixa = criar_caixa_de_entrada(self)
+        label_dinamico = usar_label_dinamico(self)
+        criar_botao(self, label_dinamico, caixa)
+
 if __name__ == "__main__":
     main()

@@ -65,5 +65,22 @@ def main():
     janela.mainloop()
 
 
+class Aula04Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        # reutiliza a função adicionar_botao quando disponível
+        if 'adicionar_botao' in globals():
+            try:
+                adicionar_botao(self, texto_botao="Nova Janela", comando=lambda: abrir_nova_janela(self), posicao_x=20, posicao_y=20)
+            except Exception:
+                ctk.CTkButton(self, text="Nova Janela", command=lambda: abrir_nova_janela(self)).pack(padx=20,pady=20)
+        else:
+            ctk.CTkButton(self, text="Nova Janela", command=lambda: abrir_nova_janela(self)).pack(padx=20,pady=20)
+
 if __name__ == "__main__":
     main()

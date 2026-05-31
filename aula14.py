@@ -111,5 +111,37 @@ def main() -> None:
     app.mainloop()
 
 
+class Aula14Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        self.rotulo_status_reproducao = ctk.CTkLabel(self, text="Alterar volume: 0%", font=("Arial", 16))
+        self.rotulo_status_reproducao.pack(pady=20)
+        controle_volume = ctk.CTkSlider(self, from_=0, to=100, command=self.atualizar_status_volume)
+        controle_volume.set(0)
+        controle_volume.pack(pady=10)
+        ctk.CTkButton(self, text="Play", command=self.reproduzir_audio).pack(pady=10)
+
+    def atualizar_status_volume(self, valor: float) -> None:
+        percentual_volume = int(float(valor))
+        self.atualizar_rotulo_status(f"Alterar volume: {percentual_volume}%")
+
+    def atualizar_rotulo_status(self, mensagem: str) -> None:
+        if self.rotulo_status_reproducao is not None:
+            self.rotulo_status_reproducao.configure(text=mensagem)
+
+    def reproduzir_audio(self) -> None:
+        try:
+            if not self.dependencias_audio_estao_disponiveis():
+                self.atualizar_rotulo_status("Instale pydub para reproduzir o áudio.")
+                return
+        except Exception:
+            pass
+        self.atualizar_rotulo_status("Reproduzindo áudio...")
+
 if __name__ == "__main__":
     main()

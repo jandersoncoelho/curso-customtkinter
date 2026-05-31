@@ -55,6 +55,25 @@ class Aula17Form(CtkBaseForm):
         self.criar_label_de_resultado()
 
 
+class Aula17Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.checkbox_var = ctk.BooleanVar(value=False)
+        ctk.CTkLabel(self, text="Aula 17 - CTKCheckbox", font=("Arial", 16)).pack(pady=10)
+        checkbox = ctk.CTkCheckBox(self, text="Clique para selecionar", variable=self.checkbox_var, onvalue=True, offvalue=False, command=self.ao_clicar_no_checkbox)
+        checkbox.pack(pady=10)
+        self.label_resultado = ctk.CTkLabel(self, text="", width=400, height=40, corner_radius=10, font=("Arial", 16, "bold"))
+        self.label_resultado.pack(pady=10)
+
+    def ao_clicar_no_checkbox(self) -> None:
+        checkbox_clicado = self.checkbox_var.get()
+        resultado_texto = "Você está no tema claro." if checkbox_clicado else "Você está no tema escuro."
+        self.label_resultado.configure(text=resultado_texto)
+        try:
+            self.aplicar_tema("Light" if checkbox_clicado else "Dark")
+        except Exception:
+            pass
+
 if __name__ == "__main__":
     aula17 = Aula17Form()
     aula17.mainloop()

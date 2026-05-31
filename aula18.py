@@ -68,6 +68,22 @@ class Aula18Form(CtkBaseForm):
         self.criar_label_resultado()
 
 
+class Aula18Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.sexo_escolhido = ctk.StringVar(value="Masculino")
+        ctk.CTkLabel(self, text="Criando RadioButtons com CustomTkinter", font=("Arial", 20)).pack(pady=10)
+        frame_opcoes = ctk.CTkFrame(self)
+        frame_opcoes.pack(pady=10)
+        ctk.CTkRadioButton(frame_opcoes, text="Sexo masculino", variable=self.sexo_escolhido, value="Masculino", command=self.ao_clicar_no_radiobutton).pack(pady=8, padx=20, anchor="w")
+        ctk.CTkRadioButton(frame_opcoes, text="Sexo feminino", variable=self.sexo_escolhido, value="Feminino", command=self.ao_clicar_no_radiobutton).pack(pady=8, padx=20, anchor="w")
+        self.label_resultado = ctk.CTkLabel(self, text="Sexo selecionado: Masculino", width=360, height=40, corner_radius=10, font=("Arial", 16, "bold"))
+        self.label_resultado.pack(pady=10)
+
+    def ao_clicar_no_radiobutton(self) -> None:
+        sexo_escolhido = self.sexo_escolhido.get()
+        self.label_resultado.configure(text=f"Sexo selecionado: {sexo_escolhido}")
+
 if __name__ == "__main__":
     aula18 = Aula18Form()
     aula18.mainloop()

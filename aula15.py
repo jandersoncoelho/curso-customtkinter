@@ -42,6 +42,13 @@ class Aula15Form(CtkBaseForm):
         segment_button.pack(pady=20)
 
 
+class Aula15Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        ctk.CTkLabel(self, text="Aula 15 - SegmentedButton", text_color="#F0F0F0", font=("Arial", 20, "bold"),).pack(pady=(20,10))
+        segment_button = ctk.CTkSegmentedButton(self, values=["Opção 1", "Opção 2", "Opção 3"], command=lambda v: print(f"Opção selecionada: {v}"))
+        segment_button.pack(pady=20)
+
 if __name__ == "__main__":
     aula15 = Aula15Form()
     aula15.mainloop()

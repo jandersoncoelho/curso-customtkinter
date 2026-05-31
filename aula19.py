@@ -78,6 +78,30 @@ class Aula19Form(CtkBaseForm):
         self.lbl_status.configure(text=f"Status: clique {self.contador}")
 
 
+class Aula19Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.contador = 0
+        self.progresso_atual = 0.0
+        ctk.CTkLabel(self, text="Aula 19 - ProgressBar e Status", font=("Arial", 18)).pack(pady=10)
+        self.lbl_status = ctk.CTkLabel(self, text="Status: template carregado", font=("Arial", 14))
+        self.lbl_status.pack(pady=(20,10))
+        self.progresso = ctk.CTkProgressBar(self, width=420, height=22)
+        self.progresso.set(self.progresso_atual)
+        self.progresso.pack(pady=(0,10))
+        self.lbl_percentual = ctk.CTkLabel(self, text="Progresso: 0%", font=("Arial", 12, "bold"))
+        self.lbl_percentual.pack(pady=(0,16))
+        self.btn_acao = ctk.CTkButton(self, text="Testar ação", command=self.on_testar_acao, height=38)
+        self.btn_acao.pack(pady=8)
+
+    def on_testar_acao(self) -> None:
+        self.contador += 1
+        self.progresso_atual = min(1.0, self.progresso_atual + 0.1)
+        percentual = int(self.progresso_atual * 100)
+        self.progresso.set(self.progresso_atual)
+        self.lbl_percentual.configure(text=f"Progresso: {percentual}%")
+        self.lbl_status.configure(text=f"Status: clique {self.contador}")
+
 if __name__ == "__main__":
     app = Aula19Form()
     app.mainloop()

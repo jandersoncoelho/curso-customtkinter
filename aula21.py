@@ -42,6 +42,18 @@ class Aula21Form(CtkBaseForm):
         botao_logar.pack(pady=30)
 
 
+class Aula21Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.criar_label_de_titulo_da_janela = lambda txt: ctk.CTkLabel(self, text=txt, font=("Arial", 24, "bold")).pack(pady=20)
+        self.criar_label_de_titulo_da_janela("Tela de Login")
+        caixa_entrada_texto_usuario = ctk.CTkEntry(self, placeholder_text="Usuário", width=250, height=45)
+        caixa_entrada_texto_senha = ctk.CTkEntry(self, placeholder_text="Senha", width=250, height=45, show="*")
+        botao_logar = ctk.CTkButton(self, text="LOGAR", width=250, height=45)
+        caixa_entrada_texto_usuario.pack(pady=20)
+        caixa_entrada_texto_senha.pack()
+        botao_logar.pack(pady=30)
+
 if __name__ == "__main__":
     app = Aula21Form()
     app.mainloop()

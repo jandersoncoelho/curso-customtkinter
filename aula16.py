@@ -46,6 +46,19 @@ def colocar_switch_na_tela(janela: "Aula16Form") -> None:
     switch.pack(pady=20)
 
 
+class Aula16Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        ctk.CTkLabel(self, text="Aula 16 - Estudando switch", font=("Arial", 20, "bold"),).pack(pady=(20, 10))
+        switch = ctk.CTkSwitch(self, text="Alternar Tema", command=lambda: self.alterar_tema_do_aplicativo())
+        switch.pack(pady=20)
+
+    def alterar_tema_do_aplicativo(self) -> None:
+        modo_atual = ctk.get_appearance_mode()
+        novo_modo = "Light" if modo_atual == "Dark" else "Dark"
+        ctk.set_appearance_mode(novo_modo)
+        print(f"Tema alterado para: {novo_modo}")
+
 if __name__ == "__main__":
     aula16 = Aula16Form()
     aula16.mainloop()

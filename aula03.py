@@ -44,5 +44,27 @@ def main():
     janela.mainloop()
 
 
+class Aula03Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        for name in ("criar_widgets","criar_tabs","criar_caixa_texto","criar_option_menu","criar_label","adicionar_botao"):
+            if name in globals():
+                func = globals()[name]
+                try:
+                    func(self)
+                    return
+                except TypeError:
+                    try:
+                        func()
+                        return
+                    except Exception:
+                        pass
+        ctk.CTkLabel(self, text="Aula 03 - conteúdo embutido").pack(padx=20,pady=20)
+
 if __name__ == "__main__":
     main()

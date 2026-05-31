@@ -102,5 +102,36 @@ def main() -> None:
     app.mainloop()
 
 
+class Aula11Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        # reproduz montar_interface do form de forma simples
+        ctk.CTkLabel(self, text="Digite algo na caixa de entrada abaixo e clique no botão.", text_color="#F0F0F0", font=("Arial", 18, "bold"),).pack(pady=(20, 10), padx=20, anchor="center")
+        self.campo_entrada = ctk.CTkEntry(self, width=300, height=40, placeholder_text="Digite algo aqui...", font=("Arial", 14), corner_radius=10)
+        self.campo_entrada.pack(pady=10, padx=20, anchor="center")
+        self.label_resultado = ctk.CTkLabel(self, text="", text_color="#011427", fg_color="#F0F0F0", width=400, height=40, corner_radius=10, font=("Arial", 16, "bold"),)
+        self.label_resultado.pack(pady=10, padx=20, anchor="center")
+        ctk.CTkButton(self, text="Enviar", command=self.processar_entrada, width=150, height=40, font=("Arial", 14, "bold"),).pack(pady=10, padx=20, anchor="center")
+
+    def obter_texto_digitado(self) -> str:
+        return self.campo_entrada.get().strip()
+
+    def gerar_mensagem_resultado(self, texto_digitado: str) -> str:
+        if not texto_digitado:
+            return "Você não digitou nenhum texto."
+        return f"Você digitou: {texto_digitado}"
+
+    def atualizar_resultado(self, mensagem: str) -> None:
+        self.label_resultado.configure(text=mensagem)
+
+    def limpar_campo_entrada(self) -> None:
+        self.campo_entrada.delete(0, ctk.END)
+
+    def processar_entrada(self) -> None:
+        texto_digitado = self.obter_texto_digitado()
+        mensagem = self.gerar_mensagem_resultado(texto_digitado)
+        self.atualizar_resultado(mensagem)
+        self.limpar_campo_entrada()
+
 if __name__ == "__main__":
     main()

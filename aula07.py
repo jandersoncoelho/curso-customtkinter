@@ -78,5 +78,21 @@ def main():
     janela.mainloop()
 
 
+class Aula07Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        try:
+            if 'aplicar_tema' in globals():
+                aplicar_tema()
+        except Exception:
+            pass
+        if 'criar_caixa_texto' in globals():
+            try:
+                criar_caixa_texto(self)
+                return
+            except Exception:
+                pass
+        ctk.CTkLabel(self, text="Aula 07 - Caixa de texto (embutido)").pack(padx=20,pady=20)
+
 if __name__ == "__main__":
     main()

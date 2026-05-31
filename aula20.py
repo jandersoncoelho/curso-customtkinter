@@ -42,6 +42,17 @@ class Aula20Form(CtkBaseForm):
         self.segundo_botao_de_teste.place(x=400, y=200)
         self.terceito_botao_de_teste.place(relx=0.7, rely=0.4)        
 
+class Aula20Frame(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        ctk.CTkLabel(self, text="Aula 20 - Método place() (embutido)", font=("Arial", 16)).pack(pady=10)
+        self.primeiro_botao_de_teste = ctk.CTkButton(self, text="Botão de teste")
+        self.segundo_botao_de_teste = ctk.CTkButton(self, text="Outro botão de teste")
+        self.terceito_botao_de_teste = ctk.CTkButton(self, text="Mais um botão de teste")
+        self.primeiro_botao_de_teste.place(x=50, y=80)
+        self.segundo_botao_de_teste.place(x=200, y=80)
+        self.terceito_botao_de_teste.place(relx=0.7, rely=0.4)
+
 if __name__ == "__main__":
     app = Aula20Form()
     app.mainloop()
