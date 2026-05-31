@@ -10,6 +10,8 @@
     Data: 2024-06-01
 """
 
+import customtkinter as ctk
+
 from ctk_base_form import CtkBaseForm
 
 
